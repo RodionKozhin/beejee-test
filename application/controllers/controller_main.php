@@ -61,7 +61,7 @@ class Controller_Main extends Controller
 
             if (!$data['error'] && !$data['task']['id']) {
                 $this->redirect();
-                $_SESSION['message'] = "Данные сохранены.";
+                $_SESSION['message'] = $data['message'];
             }
         }
 
