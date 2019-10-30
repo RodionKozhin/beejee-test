@@ -77,7 +77,8 @@ class Model_Tasks extends Model
                     $edited = 1;
                 }
 
-                $stmt = DB::run("UPDATE `tasks` SET `name` = ?, `email` = ?, `text` = ?, `done` = ?, `edited` = ? WHERE `id` = ?",
+                $stmt = DB::run("UPDATE `tasks` SET `name` = ?, `email` = ?, `text` = ?, `done` = ?, `edited` = ?
+                    WHERE `id` = ?",
                     [$post['name'], $post['email'], $post['text'], $done, $edited, $id]);
             }
             else {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>BeeJee Test</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
