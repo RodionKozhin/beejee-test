@@ -17,7 +17,7 @@
                     <textarea class="form-control" name="text" id="text"><?=isset($task['text'])? $task['text'] : '' ?></textarea>
                 </div>
 
-                <?php if ($is_admin): ?>
+                <?php if ($is_admin && $task['id']): ?>
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" name="done" id="done" <?=isset($task['done']) && $task['done']? 'checked' : '' ?> value="1">
                         <label class="form-check-label" for="done">Выполнено</label>
