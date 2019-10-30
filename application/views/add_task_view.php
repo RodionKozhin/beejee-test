@@ -10,7 +10,7 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" value="<?=isset($task['email'])? $task['email'] : '' ?>">
+                    <input type="text" class="form-control" name="email" id="email" value="<?=isset($task['email'])? $task['email'] : '' ?>">
                 </div>
                 <div class="form-group">
                     <label for="text">Текст задачи</label>

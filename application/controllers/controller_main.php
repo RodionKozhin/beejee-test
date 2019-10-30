@@ -33,6 +33,11 @@ class Controller_Main extends Controller
 
         $data+= array("is_admin" => $this->is_admin());
 
+        if (isset($_SESSION['message'])) {
+            $data['message'] = $_SESSION['message'];
+            unset($_SESSION['message']);
+        }
+
         $this->view->generate('main_view.php', 'template_view.php', $data);
     }
 
@@ -53,6 +58,11 @@ class Controller_Main extends Controller
 
         if (!empty($post)) {
             $data = $this->tasks->save($post);
+
+            if (!$data['error'] && !$data['task']['id']) {
+                $this->redirect();
+                $_SESSION['message'] = "Данные сохранены.";
+            }
         }
 
         if (isset($get['id']) && !empty($get['id'])) {

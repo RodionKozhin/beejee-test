@@ -14,16 +14,16 @@ class Model_Tasks extends Model
 
         $tasks_count = DB::run("SELECT COUNT(*) as `count` FROM `tasks`", [])->fetch()['count'];
 
-        $per_page = 2;
+        $per_page = 3;
 
         $pages_count = ceil($tasks_count/$per_page);
 
-        if ($page < 0) {
-            $page = 0;
-        }
-
         if ($page > $pages_count - 1) {
             $page = $pages_count - 1;
+        }
+
+        if ($page < 0) {
+            $page = 0;
         }
 
         $limit = "LIMIT ".($page*$per_page).", ".$per_page;
@@ -85,9 +85,6 @@ class Model_Tasks extends Model
 
             if ($stmt->rowCount() === 1 || $id) {
                 $message = "Данные сохранены.";
-            }
-            else {
-                $message = "Ошибка сохранения данных.";
             }
         }
         else {

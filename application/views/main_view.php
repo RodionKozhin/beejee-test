@@ -41,7 +41,7 @@
                             <?php endif; ?>
 
                             <?php if ($task['edited']): ?>
-                                <br><small>Отредактировано</small>
+                                <br><small>Отредактировано администратором</small>
                             <?php endif; ?>
                         </td>
                     </tr>
