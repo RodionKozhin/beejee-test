@@ -10,6 +10,9 @@ class Model_Tasks extends Model
         }
         else {
             $order_by = '';
+            $page = 0;
+            $order = "name";
+            $by = "asc";
         }
 
         $tasks_count = DB::run("SELECT COUNT(*) as `count` FROM `tasks`", [])->fetch()['count'];

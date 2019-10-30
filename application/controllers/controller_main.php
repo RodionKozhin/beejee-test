@@ -29,7 +29,7 @@ class Controller_Main extends Controller
             $by = "asc";
         }
 
-        $data = $this->tasks->get_page($page, $order, $by) + array("order" => $order, "by" => $by);
+        $data = $this->tasks->get_page($page, $order, $by);
 
         $data+= array("is_admin" => $this->is_admin());
 
